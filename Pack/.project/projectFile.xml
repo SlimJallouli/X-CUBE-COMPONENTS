@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>STMicroelectronics</vendor>
+    <name>X-CUBE-COMPONENTS::FROM_SCRATCH_GENERATED::CUBE_RULES</name>
+    <description>Pack for board components</description>
+    <url/>
+    <license>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/en.DM00367782.pdf::en.DM00367782.pdf</license>
+    <releases>
+        <release date="2020-12-09" version="1.4.1">Update the directory structure. Update the Bundles</release>
+        <release date="2020-10-21" version="1.4.0">LED amd Button: Add user defined option, Add otm8009a LCD, Add mt48lc4m32b2, Add ft6x06</release>
+        <release date="2020-06-28" version="1.3.4">Add I2C parameters for the sensors</release>
+        <release date="2020-06-27" version="1.3.3">Add sensor files and add STM32CubeMX parameters for M24SR EEPROM</release>
+        <release date="2020-06-27" version="1.3.2">Change the sensors setttings to sensors tab in STM32CubeMX</release>
+        <release date="2020-06-27" version="1.3.1">Add handlers for the motion sensors in STM32CubeMX</release>
+        <release date="2020-09-27" version="1.3.0">Add LIS3MDL</release>
+        <release date="2020-06-26" version="1.2.3">Add LED PWM variant</release>
+        <release date="2020-06-24" version="1.2.2">Update RTL_Components</release>
+        <release date="2020-06-24" version="1.2.1">Add COMPONENT_BUS_TYPE to RTE_Components</release>
+        <release date="2020-06-24" version="1.2.0">Change the components directro to  Bundle\Component\Comchannel example "CD\SSD1306\I2C". Add the led.h and button.h files Update ISM43362 files</release>
+        <release date="2020-06-23" version="1.1.0">Add Wi-Fi and HTS221. Add 3 bundles for Wi-Fi, Sensor and LCD</release>
+        <release date="2020-06-21" version="1.0.1">Add fonts.h to SSD1306</release>
+        <release date="2020-06-21" version="1.0.0">Initial release</release>
+    </releases>
+    <keywords>
+        <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
+        <keyword>CUBE_RULES_COMPLIANT</keyword>
+    </keywords>
+    <taxonomy>
+        <description Cclass="Touch Controller">Touch Controller</description>
+        <description Cclass="SDRAM">SDRAM</description>
+        <description Cclass="LCD">LCD</description>
+        <description Cclass="Motion">Motion</description>
+        <description Cclass="Environmental">Environmental</description>
+        <description Cclass="Wi-Fi">Wi-Fi</description>
+        <description Cclass="Button">Button</description>
+        <description Cclass="LED">LED</description>
+        <description Cclass="EEPROM">EEPROM</description>
+    </taxonomy>
+    <components>
+        <bundle Cbundle="Components" Cclass="LED" Cversion="1.0.0">
+            <description>Bundle for board LED</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="LED" Cvariant="GPIO" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for LED</description>
+                <files>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/LED/GPIO/led.h::Middlewares/ST/Components/LED/GPIO/led.h"/>
+                </files>
+            </component>
+            <component Cgroup="LED" Cvariant="PWM" maxInstances="1">
+                <description>Driver for LED</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/LED/PWM/led.c::Middlewares/ST/Components/LED/PWM/led.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/LED/PWM/led.h::Middlewares/ST/Components/LED/PWM/led.h"/>
+                </files>
+            </component>
+            <component Cgroup="LED" Cvariant="USER_DEFINED" maxInstances="1">
+                <description>Driver for LED</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/LED/User/led.c::Middlewares/ST/Components/LED/User/led.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/LED/User/led.h::Middlewares/ST/Components/LED/User/led.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Components" Cclass="Button" Cversion="1.0.0">
+            <description>Bundle for Buttons</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="Button" Cvariant="GPIO" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for Button GPIO mode</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/BUTTON/GPIO/button.c::Middlewares/ST/Components/BUTTON/GPIO/button.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/BUTTON/GPIO/button.h::Middlewares/ST/Components/BUTTON/GPIO/button.h"/>
+                </files>
+            </component>
+            <component Cgroup="Button" Cvariant="USER_DEFINED" maxInstances="1">
+                <description>Driver for Button user defined</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/BUTTON/User/button.c::Middlewares/ST/Components/BUTTON/User/button.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Common/BUTTON/User/button.h::Middlewares/ST/Components/BUTTON/User/button.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Sensors" Cclass="Environmental" Cversion="1.0.0">
+            <description>Bundle for environmental sensors</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="Environmental" Csub="HTS221" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for the Capacitive digital sensor for relative humidity and temperature HTS221</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/hts221.c::Middlewares/ST/Components/Sensors/Environmental/HTS221/hts221.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/hts221.h::Middlewares/ST/Components/Sensors/Environmental/HTS221/hts221.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/humidity_sensor.h::Middlewares/ST/Components/Sensors/Environmental/HTS221/humidity_sensor.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/temperature_sensor.h::Middlewares/ST/Components/Sensors/Environmental/HTS221/temperature_sensor.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/I2C/Inc/hts221_reg.h::Middlewares/ST/Components/Sensors/Environmental/HTS221/I2C/Inc/hts221_reg.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Environmental/HTS221/I2C/Src/hts221_reg_i2c.c::Middlewares/ST/Components/Sensors/Environmental/HTS221/I2C/Src/hts221_reg_i2c.c"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Sensors" Cclass="Motion" Cversion="1.0.0">
+            <description>Bundle for motion sensors</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="Mag" Csub="LIS3MDL" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for High-performance 3-axis magnetometer LIS3MDL</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LIS3MDL/lis3mdl.c::Middlewares/ST/Components/Sensors/Motion/LIS3MDL/lis3mdl.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LIS3MDL/lis3mdl.h::Middlewares/ST/Components/Sensors/Motion/LIS3MDL/lis3mdl.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.c::Middlewares/ST/Components/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.h::Middlewares/ST/Components/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/Release_Notes.html::Middlewares/ST/Components/Sensors/Motion/LSM6DSL/Release_Notes.html"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LIS3MDL/mag_sensor.h::Middlewares/ST/Components/Sensors/Motion/LIS3MDL/mag_sensor.h"/>
+                </files>
+            </component>
+            <component Cgroup="BAR" Csub="LPS22HB" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for 260-1260 hPa absolute digital output barometer (LPS22HB) </description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/lps22hb.c::Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/lps22hb.h::Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/Release_Notes.html::Middlewares/ST/Components/Sensors/Motion/LPS22HB/Release_Notes.html"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.c::Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.h::Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LPS22HB/barometer_sensor.h::Middlewares/ST/Components/Sensors/Motion/LPS22HB/barometer_sensor.h"/>
+                </files>
+            </component>
+            <component Cgroup="GYRO" Csub="LSM6DSL" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for 3D accelerometer and 3D gyroscope LSM6DSL</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/I2C/lsm6dsl_reg.c::Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/I2C/lsm6dsl_reg.h::Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/accel_gyro_sensor.h::Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/accelerometer.h::Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/gyroscope.h::Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/lsm6dsl.c::Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/lsm6dsl.h::Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/Release_Notes.html::Middlewares/ST/Components/Sensors/LSM6DSL/Release_Notes.html"/>
+                </files>
+            </component>
+            <component Cgroup="GYRO" Csub="LSM6DSL" Cvariant="SPI" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for 3D accelerometer and 3D gyroscope LSM6DSL</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/SPI/lsm6dsl_reg.c::Middlewares/ST/Components/Sensors/LSM6DSL/SPI/lsm6dsl_reg.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/SPI/lsm6dsl_reg.h::Middlewares/ST/Components/Sensors/LSM6DSL/SPI/lsm6dsl_reg.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/accel_gyro_sensor.h::Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/accelerometer.h::Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/gyroscope.h::Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/lsm6dsl.c::Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/lsm6dsl.h::Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Sensors/Motion/LSM6DSL/Release_Notes.html::Middlewares/ST/Components/Sensors/LSM6DSL/Release_Notes.html"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Wireless" Cclass="Wi-Fi" Cversion="1.0.0">
+            <description>Bundle for Wi-Fi modules</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Capiversion="1.0.0" Cgroup="Wi-Fi" Csub="ISM43362" Cvariant="SPI" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for ISM43362</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi.c::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi.h::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi_conf.h::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi_conf.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/wifi.c::Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/wifi.h::Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/SPI/Inc/es_wifi_io.h::Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/es_wifi_io.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/SPI/Src/es_wifi_io.c::Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/es_wifi_io.c"/>
+                </files>
+            </component>
+            <component Capiversion="1.0.0" Cgroup="Wi-Fi" Csub="ISM43362" Cvariant="UART" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for ISM43362</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi.c::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi.h::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/es_wifi_conf.h::Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi_conf.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/wifi.c::Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/wifi.h::Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/SPI/Inc/es_wifi_io.h::Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/Inc/es_wifi_io.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ISM43362/SPI/Src/es_wifi_io.c::Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/Src/es_wifi_io.c"/>
+                </files>
+            </component>
+            <component Capiversion="1.0.0" Cgroup="Wi-Fi" Csub="ESP8266" Cvariant="USART" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for ESP8266</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ESP8266/esp8266.c::Middlewares/ST/Components/Wi-Fi/ESP8266/esp8266.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ESP8266/esp8266.h::Middlewares/ST/Components/Wi-Fi/ESP8266/esp8266.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ESP8266/UART/Inc/esp8266_io.h::Middlewares/ST/Components/Wi-Fi/ESP8266/UART/esp8266_io.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Wi-Fi/ESP8266/UART/Src/esp8266_io.c::Middlewares/ST/Components/Wi-Fi/ESP8266/UART/esp8266_io.c"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Display" Cclass="LCD" Cversion="1.0.0">
+            <description>Bundle for LCD Controllers</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="LCDController" Csub="Grove" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for groove LCD controller
+                  https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/
+                  https://github.com/mahmood-ul-hassan/Grove_LCD_RGB_Backlight</description>
+                <files>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/Grove/LCD.h::Middlewares/ST/Components/LCD/Grove/LCD.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/Grove/I2C/easy_rgb_lcd.c::Middlewares/ST/Components/LCD/Grove/I2C/easy_rgb_lcd.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/Grove/I2C/easy_rgb_lcd.h::Middlewares/ST/Components/LCD/Grove/I2C/easy_rgb_lcd.h"/>
+                </files>
+            </component>
+            <component Cgroup="LCDController" Csub="OTM8009A" Cvariant="DSI" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for otm8009a</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/otm8009a/lcd.c::Middlewares/ST/Components/Display/otm8009a/lcd.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/otm8009a/lcd.h::Middlewares/ST/Components/Display/otm8009a/lcd.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/otm8009a/otm8009a.c::Middlewares/ST/Components/Display/otm8009a/otm8009a.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/otm8009a/otm8009a.h::Middlewares/ST/Components/Display/otm8009a/otm8009a.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/LCD/otm8009a/Release_Notes.html::Middlewares/ST/Components/Display/otm8009a/Release_Notes.html"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="MEMORY" Cclass="EEPROM" Cversion="1.0.0">
+            <description>Bundle for EEPROM memory</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="NCF" Csub="M24SR" Cvariant="I2C" isDefaultVariant="true" maxInstances="1">
+                <description>Driver for Dynamic NFC tag based on M24SR </description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/EEPROM/M24SR/m24sr.c::Middlewares/ST/Components/MEMORY/EEPROM/M24SR/m24sr.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/EEPROM/M24SR/m24sr.h::Middlewares/ST/Components/MEMORY/EEPROM/M24SR/m24sr.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/EEPROM/M24SR/Release_Notes.html::Middlewares/ST/Components/MEMORY/EEPROM/M24SR/Release_Notes.html"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="MEMORY" Cclass="SDRAM" Cversion="1.0.0">
+            <description>Bundle for External memory</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="SDRAM" Csub="MT48LC4M32B2" Cvariant="SDRAM" maxInstances="1">
+                <description>MT48LC4M32B2 SDRAM driver</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/SDRAM/mt48lc4m32b2/mt48lc4m32b2.c::Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/mt48lc4m32b2.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/SDRAM/mt48lc4m32b2/mt48lc4m32b2.h::Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/mt48lc4m32b2.h"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Memory/SDRAM/mt48lc4m32b2/sdram.h::Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/sdram.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Controller" Cclass="Touch Controller" Cversion="1.0.0">
+            <description>Touch Controllers</description>
+            <doc>C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Doc/Readme.txt::Doc/Readme.txt</doc>
+            <component Cgroup="TouchScreen" Csub="FT6X06" Cvariant="I2C" maxInstances="1">
+                <description>Driver for the ft6x06</description>
+                <files>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ft6x06.c::Middlewares/ST/Components/Controller/ft6x06/ft6x06.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ft6x06.h::Middlewares/ST/Components/Controller/ft6x06/ft6x06.h"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ft6x06_io.c::Middlewares/ST/Components/Controller/ft6x06/ft6x06_io.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ft6x06_io.h::Middlewares/ST/Components/Controller/ft6x06/ft6x06_io.h"/>
+                    <file category="doc" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/Release_Notes.html::Middlewares/ST/Components/Controller/ft6x06/Release_Notes.html"/>
+                    <file category="source" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ts.c::Middlewares/ST/Components/Controller/ft6x06/ts.c"/>
+                    <file category="header" name="C:/CMSIS_Pack/X-CUBE-COMPONENTS/Sources/Touch/ft6x06/ts.h::Middlewares/ST/Components/Controller/ft6x06/ts.h"/>
+                </files>
+            </component>
+        </bundle>
+    </components>
+</package>

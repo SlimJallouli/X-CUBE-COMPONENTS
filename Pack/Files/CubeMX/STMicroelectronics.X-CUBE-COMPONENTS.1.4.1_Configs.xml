@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="X-CUBE-COMPONENTS" RootFolder="Packs/STMicroelectronics/X-CUBE-COMPONENTS/1.4.1/" Version="1.4.1" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+    <RefConfig Name="LEDJjComponents">
+        <Component Name="ComponentsCcLED:LED:GPIO:$ComponentsCcLEDJjLED"/>
+        <Component Name="ComponentsCcLED:LED:PWM:$ComponentsCcLEDJjLED"/>
+        <Component Name="ComponentsCcLED:LED:USERIiDEFINED:$ComponentsCcLEDJjLED"/>
+        <ConfigFile Name="LEDJjComponents_conf"/>
+    </RefConfig>
+    <RefConfig Name="ButtonJjComponents">
+        <Component Name="ComponentsCcButton:Button:GPIO:$ComponentsCcButtonJjButton"/>
+        <Component Name="ComponentsCcButton:Button:USERIiDEFINED:$ComponentsCcButtonJjButton"/>
+    </RefConfig>
+    <RefConfig Name="EnvironmentalJjSensors">
+        <Component Name="SensorsCcEnvironmental:Environmental:HTS221:I2C:$SensorsCcEnvironmentalJjEnvironmentalJjHTS221"/>
+        <ConfigFile Name="EnvironmentalJjSensors_conf"/>
+    </RefConfig>
+    <RefConfig Name="MotionJjSensors">
+        <Component Name="SensorsCcMotion:Mag:LIS3MDL:I2C:$SensorsCcMotionJjMagJjLIS3MDL"/>
+        <Component Name="SensorsCcMotion:BAR:LPS22HB:I2C:$SensorsCcMotionJjBARJjLPS22HB"/>
+        <Component Name="SensorsCcMotion:GYRO:LSM6DSL:I2C:$SensorsCcMotionJjGYROJjLSM6DSL"/>
+        <Component Name="SensorsCcMotion:GYRO:LSM6DSL:SPI:$SensorsCcMotionJjGYROJjLSM6DSL"/>
+        <ConfigFile Name="MotionJjSensors_conf"/>
+    </RefConfig>
+    <RefConfig Name="WiAaFiJjWireless">
+        <Component Name="WirelessCcWiAaFi:WiAaFi:ISM43362:SPI:$WirelessCcWiAaFiJjWiAaFiJjISM43362"/>
+        <Component Name="WirelessCcWiAaFi:WiAaFi:ISM43362:UART:$WirelessCcWiAaFiJjWiAaFiJjISM43362"/>
+        <Component Name="WirelessCcWiAaFi:WiAaFi:ESP8266:USART:$WirelessCcWiAaFiJjWiAaFiJjESP8266"/>
+        <ConfigFile Name="WiAaFiJjWireless_conf"/>
+    </RefConfig>
+    <RefConfig Name="LCDJjDisplay">
+        <Component Name="DisplayCcLCD:LCDController:Grove:I2C:$DisplayCcLCDJjLCDControllerJjGrove"/>
+        <Component Name="DisplayCcLCD:LCDController:OTM8009A:DSI:$DisplayCcLCDJjLCDControllerJjOTM8009A"/>
+        <ConfigFile Name="LCDJjDisplay_conf"/>
+    </RefConfig>
+    <RefConfig Name="EEPROMJjMEMORY">
+        <Component Name="MEMORYCcEEPROM:NCF:M24SR:I2C:$MEMORYCcEEPROMJjNCFJjM24SR"/>
+        <ConfigFile Name="EEPROMJjMEMORY_conf"/>
+    </RefConfig>
+    <RefConfig Name="SDRAMJjMEMORY">
+        <Component Name="MEMORYCcSDRAM:SDRAM:MT48LC4M32B2:SDRAM:$MEMORYCcSDRAMJjSDRAMJjMT48LC4M32B2"/>
+        <ConfigFile Name="SDRAMJjMEMORY_conf"/>
+    </RefConfig>
+    <RefConfig Name="TouchOoControllerJjController">
+        <Component Name="ControllerCcTouchOoController:TouchScreen:FT6X06:I2C:$ControllerCcTouchOoControllerJjTouchScreenJjFT6X06"/>
+        <ConfigFile Name="TouchOoControllerJjController_conf"/>
+    </RefConfig>
+    <RefConfigFile Added="true" Name="LEDJjComponents_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="LED_TIM_HANDLER" GenericType="simple" Name="LED_TIM_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LED_TIM_CHANNEL" GenericType="simple" Name="LED_TIM_CHANNEL" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="EnvironmentalJjSensors_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="HTS221_I2C_HANDLER" GenericType="simple" Name="HTS221_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="HTS221_I2C_ADDRESS" GenericType="simple" Name="HTS221_I2C_ADDRESS" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="MotionJjSensors_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="LIS3MDL_I2C_HANDLER" GenericType="simple" Name="LIS3MDL_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LIS3MDL_I2C_ADDRESS" GenericType="simple" Name="LIS3MDL_I2C_ADDRESS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_I2C_HANDLER" GenericType="simple" Name="LSM6DSL_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_I2C_ADDRESS" GenericType="simple" Name="LSM6DSL_I2C_ADDRESS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LPS22HB_I2C_HANDLER" GenericType="simple" Name="LPS22HB_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LPS22HB_I2C_ADDRESS" GenericType="simple" Name="LPS22HB_I2C_ADDRESS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_SPI_HANDLER" GenericType="simple" Name="LSM6DSL_SPI_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_NSS_GPIO_Port" GenericType="simple" Name="LSM6DSL_NSS_GPIO_Port" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_NSS_Pin" GenericType="simple" Name="LSM6DSL_NSS_Pin" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LSM6DSL_NSS" GenericType="simple" Name="LSM6DSL_NSS" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="WiAaFiJjWireless_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="ISM43362_SPI_HANDLER" GenericType="simple" Name="ISM43362_SPI_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_UART_HANDLER" GenericType="simple" Name="ISM43362_UART_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ESP8266_USART_HANDLER" GenericType="simple" Name="ESP8266_USART_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_RESET_GPIO_Port" GenericType="simple" Name="ISM43362_RESET_GPIO_Port" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_RESET_Pin" GenericType="simple" Name="ISM43362_RESET_Pin" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_NSS_GPIO_Port" GenericType="simple" Name="ISM43362_NSS_GPIO_Port" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_NSS_Pin" GenericType="simple" Name="ISM43362_NSS_Pin" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_DATA_READY_GPIO_Port" GenericType="simple" Name="ISM43362_DATA_READY_GPIO_Port" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="ISM43362_DATA_READY_Pin" GenericType="simple" Name="ISM43362_DATA_READY_Pin" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="LCDJjDisplay_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="EAZY_LCD_I2C_HANDLER" GenericType="simple" Name="EAZY_LCD_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="EAZY_LCD_I2C_LCD_ADDR" GenericType="simple" Name="EAZY_LCD_I2C_LCD_ADDR" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="EAZY_LCD_I2C_RGB_ADDR" GenericType="simple" Name="EAZY_LCD_I2C_RGB_ADDR" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LCD_FB_START_ADDRESS" GenericType="simple" Name="LCD_FB_START_ADDRESS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LTDC_MAX_LAYER_NUMBER" GenericType="simple" Name="LTDC_MAX_LAYER_NUMBER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LTDC_ACTIVE_LAYER_BACKGROUND" GenericType="simple" Name="LTDC_ACTIVE_LAYER_BACKGROUND" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LTDC_ACTIVE_LAYER_FOREGROUND" GenericType="simple" Name="LTDC_ACTIVE_LAYER_FOREGROUND" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LTDC_NB_OF_LAYERS" GenericType="simple" Name="LTDC_NB_OF_LAYERS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="LTDC_DEFAULT_ACTIVE_LAYER" GenericType="simple" Name="LTDC_DEFAULT_ACTIVE_LAYER" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="EEPROMJjMEMORY_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="M24SR_I2C_HANDLER" GenericType="simple" Name="M24SR_I2C_HANDLER" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="M24SR_I2C_ADDRESS" GenericType="simple" Name="M24SR_I2C_ADDRESS" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="SDRAMJjMEMORY_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="MT48LC4M32B2_DEVICE_ADDR" GenericType="simple" Name="MT48LC4M32B2_DEVICE_ADDR" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="MT48LC4M32B2_DEVICE_SIZE" GenericType="simple" Name="MT48LC4M32B2_DEVICE_SIZE" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="MT48LC4M32B2_REFRESH_COUNT" GenericType="simple" Name="MT48LC4M32B2_REFRESH_COUNT" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="MT48LC4M32B2_TIMEOUT" GenericType="simple" Name="MT48LC4M32B2_TIMEOUT" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="TouchOoControllerJjController_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./STMicroelectronics.X-CUBE-COMPONENTS_conf.h"/>
+        <Argument AddressOf="false" Comment="FT_6206_I2C_ADDRESS" GenericType="simple" Name="FT_6206_I2C_ADDRESS" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="FT_6206_MAX_WIDTH" GenericType="simple" Name="FT_6206_MAX_WIDTH" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="FT_6206_MAX_HEIGHT" GenericType="simple" Name="FT_6206_MAX_HEIGHT" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="FT_6206_MAX_WIDTH_HEIGHT" GenericType="simple" Name="FT_6206_MAX_WIDTH_HEIGHT" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="FT6206_MAX_DETECTABLE_TOUCH" GenericType="simple" Name="FT6206_MAX_DETECTABLE_TOUCH" OptimizationCondition="equal"/>
+        <Argument AddressOf="false" Comment="FT_6206_I2C_HANDLER" GenericType="simple" Name="FT_6206_I2C_HANDLER" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefComponent Cclass="ComponentsCcLED" Cgroup="LED" Cversion="1Gg0Gg0">
+        <SubComponent Csub="" Cvariant="USERIiDEFINED:USERIiDEFINED">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/LED/User/led.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/LED/User/led.h"/>
+        </SubComponent>
+        <SubComponent Csub="" Cvariant="PWM:PWM">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/LED/PWM/led.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/LED/PWM/led.h"/>
+        </SubComponent>
+        <SubComponent Csub="" Cvariant="GPIO:GPIO">
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/LED/GPIO/led.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="ComponentsCcButton" Cgroup="Button" Cversion="1Gg0Gg0">
+        <SubComponent Csub="" Cvariant="USERIiDEFINED:USERIiDEFINED">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/BUTTON/User/button.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/BUTTON/User/button.h"/>
+        </SubComponent>
+        <SubComponent Csub="" Cvariant="GPIO:GPIO">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/BUTTON/GPIO/button.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/BUTTON/GPIO/button.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="SensorsCcEnvironmental" Cgroup="Environmental" Cversion="1Gg0Gg0">
+        <SubComponent Csub="HTS221" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/hts221.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/hts221.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/humidity_sensor.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/temperature_sensor.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/I2C/Inc/hts221_reg.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Environmental/HTS221/I2C/Src/hts221_reg_i2c.c"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="SensorsCcMotion" Cgroup="Mag" Cversion="1Gg0Gg0">
+        <SubComponent Csub="LIS3MDL" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LIS3MDL/lis3mdl.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LIS3MDL/lis3mdl.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LSM6DSL/Release_Notes.html"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LIS3MDL/mag_sensor.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="SensorsCcMotion" Cgroup="BAR" Cversion="1Gg0Gg0">
+        <SubComponent Csub="LPS22HB" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/Release_Notes.html"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/Motion/LPS22HB/barometer_sensor.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="SensorsCcMotion" Cgroup="GYRO" Cversion="1Gg0Gg0">
+        <SubComponent Csub="LSM6DSL" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/Release_Notes.html"/>
+        </SubComponent>
+        <SubComponent Csub="LSM6DSL" Cvariant="SPI:SPI" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/SPI/lsm6dsl_reg.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/SPI/lsm6dsl_reg.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Sensors/LSM6DSL/Release_Notes.html"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="WirelessCcWiAaFi" Cgroup="WiAaFi" Cversion="1Gg0Gg0">
+        <SubComponent Csub="ISM43362" Cvariant="SPI:SPI" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi_conf.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/es_wifi_io.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/es_wifi_io.c"/>
+        </SubComponent>
+        <SubComponent Csub="ISM43362" Cvariant="UART:UART" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/es_wifi_conf.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/wifi.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/Inc/es_wifi_io.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ISM43362/SPI/Src/es_wifi_io.c"/>
+        </SubComponent>
+        <SubComponent Csub="ESP8266" Cvariant="USART:USART" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ESP8266/esp8266.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ESP8266/esp8266.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ESP8266/UART/esp8266_io.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Wi-Fi/ESP8266/UART/esp8266_io.c"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="DisplayCcLCD" Cgroup="LCDController" Cversion="1Gg0Gg0">
+        <SubComponent Csub="Grove" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/LCD/Grove/LCD.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/LCD/Grove/I2C/easy_rgb_lcd.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/LCD/Grove/I2C/easy_rgb_lcd.h"/>
+        </SubComponent>
+        <SubComponent Csub="OTM8009A" Cvariant="DSI:DSI" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Display/otm8009a/lcd.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Display/otm8009a/lcd.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Display/otm8009a/otm8009a.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Display/otm8009a/otm8009a.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Display/otm8009a/Release_Notes.html"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="MEMORYCcEEPROM" Cgroup="NCF" Cversion="1Gg0Gg0">
+        <SubComponent Csub="M24SR" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/MEMORY/EEPROM/M24SR/m24sr.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/MEMORY/EEPROM/M24SR/m24sr.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/MEMORY/EEPROM/M24SR/Release_Notes.html"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="MEMORYCcSDRAM" Cgroup="SDRAM" Cversion="1Gg0Gg0">
+        <SubComponent Csub="MT48LC4M32B2" Cvariant="SDRAM:SDRAM" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/mt48lc4m32b2.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/mt48lc4m32b2.h"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/MEMORY/SDRAM/mt48lc4m32b2/sdram.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="ControllerCcTouchOoController" Cgroup="TouchScreen" Cversion="1Gg0Gg0">
+        <SubComponent Csub="FT6X06" Cvariant="I2C:I2C" Cversion="1Gg0Gg0">
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ft6x06.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ft6x06.h"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ft6x06_io.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ft6x06_io.h"/>
+            <File Category="doc" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/Release_Notes.html"/>
+            <File Category="source" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ts.c"/>
+            <File Category="header" Condition="" Name="Middlewares/ST/Components/Controller/ft6x06/ts.h"/>
+        </SubComponent>
+    </RefComponent>
+</IP>
