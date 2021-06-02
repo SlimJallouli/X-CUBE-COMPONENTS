@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
-#include "lsm6dsl.h"
+#include "lps22hb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,8 +46,9 @@ I2C_HandleTypeDef hi2c2;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-LSM6DSL_Object_t        LSM6DSL_Obj;
-uint8_t LSM6DSL_Id;
+/****************************** LPS22 ****************************************/
+LPS22HB_Object_t  LPS22HB_Obj;
+uint8_t PRESS_Id;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -326,31 +327,29 @@ int App_Init(void)
 {
 uint32_t err = 0;
   
-  LSM6DSL_Obj.IO.BusType       =  LSM6DSL_I2C_BUS;
-  LSM6DSL_Obj.IO.Address       =  LSM6DSL_I2C_ADDRESS;
-  LSM6DSL_Obj.IO.hi2c          = &LSM6DSL_I2C_HANDLER;
-  LSM6DSL_Obj.is_initialized   = 0;
-  LSM6DSL_Obj.acc_is_enabled   = 0;
-  LSM6DSL_Obj.gyro_is_enabled = 0;
-
-  err = LSM6DSL_Init       (&LSM6DSL_Obj);
-  err = LSM6DSL_ReadID     (&LSM6DSL_Obj, &LSM6DSL_Id);
-  err = LSM6DSL_ACC_Enable (&LSM6DSL_Obj);
-  err = LSM6DSL_GYRO_Enable(&LSM6DSL_Obj);
-   
-  if(err) { printf("LSM6DSL error\r\n");}
+  LPS22HB_Obj.IO.BusType       =  LPS22HB_I2C_BUS;
+  LPS22HB_Obj.IO.Address       =  LPS22HB_I2C_ADDRESS;
+  LPS22HB_Obj.IO.hi2c          = &LPS22HB_I2C_HANDLER;   
+  LPS22HB_Obj.is_initialized   = 0;
+  LPS22HB_Obj.press_is_enabled = 0;
+  LPS22HB_Obj.temp_is_enabled  = 0;
   
+  err = LPS22HB_Init        (&LPS22HB_Obj);
+  err = LPS22HB_ReadID      (&LPS22HB_Obj, &PRESS_Id);
+  err = LPS22HB_PRESS_Enable(&LPS22HB_Obj);
+  err = LPS22HB_TEMP_Enable (&LPS22HB_Obj);
+
+  if(err) { printf("LPS22 error\r\n");}
+    
   return err;
 }
 
 int App_Run(void)
 {
   uint32_t err = 0;
-  LSM6DSL_Axes_t LSM6DSL_ACC_Axes;
-  LSM6DSL_Axes_t LSM6DSL_GYRO_Axes;
+  float          fPressure;
   
-  err = LSM6DSL_ACC_GetAxes      (&LSM6DSL_Obj, &LSM6DSL_ACC_Axes);
-  err = LSM6DSL_GYRO_GetAxes     (&LSM6DSL_Obj, &LSM6DSL_GYRO_Axes   );
+  err = LPS22HB_PRESS_GetPressure(&LPS22HB_Obj, &fPressure   );
     
   if(err)
   {
@@ -358,9 +357,7 @@ int App_Run(void)
   }
   else
   {
-    printf("LSM6DSL : %d, %d, %d\r\n", LSM6DSL_ACC_Axes.x , LSM6DSL_ACC_Axes.y , LSM6DSL_ACC_Axes.z );
-    printf("GYRO    : %d, %d, %d\r\n", LSM6DSL_GYRO_Axes.x, LSM6DSL_GYRO_Axes.y, LSM6DSL_GYRO_Axes.z);
-    printf("-------------------------------------------------------\r\n\r\n");
+    printf("Pressure: %d\r\n", (int)fPressure);
   }
   
   HAL_Delay(1000);

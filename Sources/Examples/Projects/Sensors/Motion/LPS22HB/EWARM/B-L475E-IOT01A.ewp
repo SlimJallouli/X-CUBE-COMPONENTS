@@ -355,10 +355,10 @@
           <state>$PROJ_DIR$/../../../../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../Drivers/CMSIS/Device/ST/STM32L4xx/Include</state>
           <state>$PROJ_DIR$/../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/I2C</state>
-          <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL</state>
           <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Environmental/HTS221</state>
           <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Environmental/HTS221/I2C/Inc</state>
+          <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB</state>
+          <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C</state>
           <state>$PROJ_DIR$/../../../../../Middlewares/ST/Components/LED/GPIO</state>
         </option>
         <option>
@@ -1175,27 +1175,21 @@
     <group>
       <name>Sensors</name>
       <group>
-        <name>Motion/GYRO/LSM6DSL/I2C</name>
+        <name>Motion/BAR/LPS22HB/I2C</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.h</name>
+          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.h</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h</name>
+          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.h</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h</name>
+          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/barometer_sensor.h</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h</name>
+          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c</name>
+          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.c</name>
         </file>
       </group>
     </group>
