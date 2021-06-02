@@ -32,7 +32,7 @@
 	MiddleWare version :
 */
 /*---------- HTS221_I2C_HANDLER  -----------*/
-#define HTS221_I2C_HANDLER      hi2c2
+#define HTS221_I2C_HANDLER      HTS221_I2C
 
 /*---------- HTS221_I2C_ADDRESS  -----------*/
 #define HTS221_I2C_ADDRESS      0xBF

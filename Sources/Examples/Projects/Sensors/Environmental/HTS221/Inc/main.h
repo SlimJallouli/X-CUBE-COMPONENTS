@@ -59,6 +59,7 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define HTS221_I2C hi2c2
 #define LED1_Pin GPIO_PIN_5
 #define LED1_GPIO_Port GPIOA
 #define ISM43362_RESET_Pin GPIO_PIN_8

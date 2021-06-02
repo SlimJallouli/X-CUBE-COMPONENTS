@@ -1431,9 +1431,6 @@
         <group>
             <name>User</name>
             <file>
-                <name>$PROJ_DIR$\..\Src\app.c</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\Src\main.c</name>
             </file>
             <file>
@@ -1445,9 +1442,105 @@
         </group>
     </group>
     <group>
+        <name>Drivers</name>
+        <group>
+            <name>CMSIS</name>
+            <file>
+                <name>$PROJ_DIR$\..\Src\system_stm32l4xx.c</name>
+            </file>
+        </group>
+        <group>
+            <name>STM32L4xx_HAL_Driver</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ramfunc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\..\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</name>
+            </file>
+        </group>
+    </group>
+    <group>
         <name>Middlewares</name>
         <group>
             <name>Sensors</name>
+            <group>
+                <name>Environmental/Environmental/HTS221/I2C</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\hts221.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\hts221.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\I2C\Inc\hts221_reg.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\I2C\Src\hts221_reg_i2c.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\humidity_sensor.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\..\..\Middlewares\ST\Components\Sensors\Environmental\HTS221\temperature_sensor.h</name>
+                </file>
+            </group>
         </group>
         <group>
             <name>STDIO</name>
