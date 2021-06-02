@@ -318,9 +318,9 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 /**
-* @brief  Send HTML page
+* @brief  Initialize the sensor
 * @param  None
-* @retval None
+* @retval Init error
 */
 int App_Init(void)
 {
@@ -343,6 +343,11 @@ uint32_t err = 0;
   return err;
 }
 
+/**
+* @brief  Read and display sensor data
+* @param  None
+* @retval Run error
+*/
 int App_Run(void)
 {
   uint32_t err = 0;
