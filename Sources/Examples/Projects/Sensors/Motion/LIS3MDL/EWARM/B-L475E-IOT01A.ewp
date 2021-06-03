@@ -1185,30 +1185,6 @@
     <group>
       <name>Sensors</name>
       <group>
-        <name>Motion/GYRO/LSM6DSL/I2C</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/accel_gyro_sensor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/accelerometer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/gyroscope.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/I2C/lsm6dsl_reg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/LSM6DSL/lsm6dsl.c</name>
-        </file>
-      </group>
-      <group>
         <name>Motion/Mag/LIS3MDL/I2C</name>
         <file>
           <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LIS3MDL/lis3mdl.h</name>
@@ -1224,24 +1200,6 @@
         </file>
         <file>
           <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LIS3MDL/I2C/lis3mdl_reg.c</name>
-        </file>
-      </group>
-      <group>
-        <name>Motion/BAR/LPS22HB/I2C</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/barometer_sensor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/lps22hb.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Middlewares/ST/Components/Sensors/Motion/LPS22HB/I2C/lps22hb_reg.c</name>
         </file>
       </group>
     </group>

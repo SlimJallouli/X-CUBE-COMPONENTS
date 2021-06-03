@@ -36,5 +36,11 @@ This project can be generated for STM32CubeIDE and Keil
 1. Open IAR project
 1. Build and run
 
+# Known issues
+Not getting proper data. Always read zeros
+
+# Workaround
+Need to find the proper init sequence
+
 ## Output
 ![Termonal](media/Terminal.png)

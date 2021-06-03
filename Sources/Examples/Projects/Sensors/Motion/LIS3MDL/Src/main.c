@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
-#include "lsm6dsl.h"
+#include "lis3mdl.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,8 +46,8 @@ I2C_HandleTypeDef hi2c2;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-LSM6DSL_Object_t        LSM6DSL_Obj;
-uint8_t LSM6DSL_Id;
+LIS3MDL_Object_t        LIS3MDL_Obj;
+uint8_t LIS3MDL_Id;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -326,19 +326,17 @@ int App_Init(void)
 {
 uint32_t err = 0;
   
-  LSM6DSL_Obj.IO.BusType       =  LSM6DSL_I2C_BUS;
-  LSM6DSL_Obj.IO.Address       =  LSM6DSL_I2C_ADDRESS;
-  LSM6DSL_Obj.IO.hi2c          = &LSM6DSL_I2C_HANDLER;
-  LSM6DSL_Obj.is_initialized   = 0;
-  LSM6DSL_Obj.acc_is_enabled   = 0;
-  LSM6DSL_Obj.gyro_is_enabled = 0;
+  LIS3MDL_Obj.IO.BusType       =  LIS3MDL_I2C_BUS;
+  LIS3MDL_Obj.IO.Address       =  LIS3MDL_I2C_ADDRESS;
+  LIS3MDL_Obj.IO.hi2c          = &LIS3MDL_I2C_HANDLER;
+  LIS3MDL_Obj.is_initialized   = 0;
+  LIS3MDL_Obj.mag_is_enabled   = 0;
 
-  err = LSM6DSL_Init       (&LSM6DSL_Obj);
-  err = LSM6DSL_ReadID     (&LSM6DSL_Obj, &LSM6DSL_Id);
-  err = LSM6DSL_ACC_Enable (&LSM6DSL_Obj);
-  err = LSM6DSL_GYRO_Enable(&LSM6DSL_Obj);
+  err = LIS3MDL_Init       (&LIS3MDL_Obj);
+  err = LIS3MDL_ReadID     (&LIS3MDL_Obj, &LIS3MDL_Id);
+  err = LIS3MDL_MAG_Enable (&LIS3MDL_Obj);
    
-  if(err) { printf("LSM6DSL error\r\n");}
+  if(err) { printf("LIS3MDL error\r\n");}
   
   return err;
 }
@@ -351,11 +349,9 @@ uint32_t err = 0;
 int App_Run(void)
 {
   uint32_t err = 0;
-  LSM6DSL_Axes_t LSM6DSL_ACC_Axes;
-  LSM6DSL_Axes_t LSM6DSL_GYRO_Axes;
+  LIS3MDL_Axes_t LIS3MDL_Axes;
   
-  err = LSM6DSL_ACC_GetAxes      (&LSM6DSL_Obj, &LSM6DSL_ACC_Axes);
-  err = LSM6DSL_GYRO_GetAxes     (&LSM6DSL_Obj, &LSM6DSL_GYRO_Axes   );
+  err = LIS3MDL_MAG_GetAxes (&LIS3MDL_Obj, &LIS3MDL_Axes);
     
   if(err)
   {
@@ -363,9 +359,7 @@ int App_Run(void)
   }
   else
   {
-    printf("LSM6DSL : %d, %d, %d\r\n", LSM6DSL_ACC_Axes.x , LSM6DSL_ACC_Axes.y , LSM6DSL_ACC_Axes.z );
-    printf("GYRO    : %d, %d, %d\r\n", LSM6DSL_GYRO_Axes.x, LSM6DSL_GYRO_Axes.y, LSM6DSL_GYRO_Axes.z);
-    printf("-------------------------------------------------------\r\n\r\n");
+    printf("LIS3MDL : %d, %d, %d\r\n", LIS3MDL_Axes.x , LIS3MDL_Axes.y , LIS3MDL_Axes.z );
   }
   
   HAL_Delay(1000);

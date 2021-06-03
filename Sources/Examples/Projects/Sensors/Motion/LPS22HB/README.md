@@ -1,10 +1,10 @@
-# LSM6DSL example for the B-L475E-IOT01A board
-This example shows how to use the LSM6DSL sensor
+# LPS22HB example for the B-L475E-IOT01A board
+This example shows how to use the LPS22HB sensor
 
 ## Supported Hardware
 This example can run on the [B-L475E-IOT01A](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/b-l475e-iot01a.html) and on the [B-L4S5I-IOT01A](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/b-l4s5i-iot01a.html)
 
-The example can be generated to support any STM32 and LSM6DSL. It can be a Nucleo board + X-NUCLEO
+The example can be generated to support any STM32 and LPS22HB. It can be a Nucleo board + X-NUCLEO
 
 ## Supported IDEs
 This project was tested with IAR 8.50.6

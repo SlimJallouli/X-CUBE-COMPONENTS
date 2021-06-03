@@ -333,10 +333,12 @@ uint32_t err = 0;
   LSM6DSL_Obj.acc_is_enabled   = 0;
   LSM6DSL_Obj.gyro_is_enabled = 0;
 
-  err = LSM6DSL_Init       (&LSM6DSL_Obj);
-  err = LSM6DSL_ReadID     (&LSM6DSL_Obj, &LSM6DSL_Id);
-  err = LSM6DSL_ACC_Enable (&LSM6DSL_Obj);
-  err = LSM6DSL_GYRO_Enable(&LSM6DSL_Obj);
+  err = LSM6DSL_Init                 (&LSM6DSL_Obj);
+  err = LSM6DSL_ReadID               (&LSM6DSL_Obj, &LSM6DSL_Id);
+  err = LSM6DSL_ACC_Enable           (&LSM6DSL_Obj);
+  err = LSM6DSL_ACC_SetFullScale     (&LSM6DSL_Obj, LSM6DSL_2g);
+  err = LSM6DSL_ACC_SetOutputDataRate(&LSM6DSL_Obj, 416.0f);
+  err = LSM6DSL_GYRO_Enable          (&LSM6DSL_Obj);
    
   if(err) { printf("LSM6DSL error\r\n");}
   
@@ -354,8 +356,8 @@ int App_Run(void)
   LSM6DSL_Axes_t LSM6DSL_ACC_Axes;
   LSM6DSL_Axes_t LSM6DSL_GYRO_Axes;
   
-  err = LSM6DSL_ACC_GetAxes      (&LSM6DSL_Obj, &LSM6DSL_ACC_Axes);
-  err = LSM6DSL_GYRO_GetAxes     (&LSM6DSL_Obj, &LSM6DSL_GYRO_Axes   );
+  err = LSM6DSL_ACC_GetAxes  (&LSM6DSL_Obj, &LSM6DSL_ACC_Axes );
+  err = LSM6DSL_GYRO_GetAxes (&LSM6DSL_Obj, &LSM6DSL_GYRO_Axes);
     
   if(err)
   {
@@ -363,9 +365,8 @@ int App_Run(void)
   }
   else
   {
-    printf("LSM6DSL : %d, %d, %d\r\n", LSM6DSL_ACC_Axes.x , LSM6DSL_ACC_Axes.y , LSM6DSL_ACC_Axes.z );
-    printf("GYRO    : %d, %d, %d\r\n", LSM6DSL_GYRO_Axes.x, LSM6DSL_GYRO_Axes.y, LSM6DSL_GYRO_Axes.z);
-    printf("-------------------------------------------------------\r\n\r\n");
+    printf("ACC : %d, %d, %d\r\n", LSM6DSL_ACC_Axes.x , LSM6DSL_ACC_Axes.y , LSM6DSL_ACC_Axes.z );
+    printf("GYRO: %d, %d, %d\r\n", LSM6DSL_GYRO_Axes.x, LSM6DSL_GYRO_Axes.y, LSM6DSL_GYRO_Axes.z);
   }
   
   HAL_Delay(1000);

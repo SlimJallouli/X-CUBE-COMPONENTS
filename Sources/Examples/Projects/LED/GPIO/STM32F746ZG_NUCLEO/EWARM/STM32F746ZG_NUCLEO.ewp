@@ -1072,12 +1072,6 @@
   <group>
     <name>Drivers</name>
     <group>
-      <name>CMSIS</name>
-      <file>
-        <name>$PROJ_DIR$/../Src/system_stm32f7xx.c</name>
-      </file>
-    </group>
-    <group>
       <name>STM32F7xx_HAL_Driver</name>
       <file>
         <name>$PROJ_DIR$/../../../../../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c</name>
@@ -1126,6 +1120,12 @@
       </file>
       <file>
         <name>$PROJ_DIR$/../../../../../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c</name>
+      </file>
+    </group>
+    <group>
+      <name>CMSIS</name>
+      <file>
+        <name>$PROJ_DIR$/../Src/system_stm32f7xx.c</name>
       </file>
     </group>
   </group>
