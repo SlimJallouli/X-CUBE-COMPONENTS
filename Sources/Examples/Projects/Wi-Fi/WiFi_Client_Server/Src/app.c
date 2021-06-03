@@ -1,3 +1,20 @@
+/**
+  ******************************************************************************
+  * @file           : app.c
+  * @brief          : Main application body
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
+  *
+  ******************************************************************************
+  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -26,58 +43,58 @@ int App_Init(void)
   uint8_t  IP_Addr[4];
   uint16_t local_port = 0;
   
-  LOG("****** WIFI Module in TCP Client mode demonstration ****** \n\n");
-  LOG("TCP Client Instructions :\n");
-  LOG("1- Make sure your Phone is connected to the same network that\n");
-  LOG("   you configured using the Configuration Access Point.\n");
-  LOG("2- Create a server by using the android application TCP Server\n");
-  LOG("   with port(8002).\n");
-  LOG("3- Get the Network Name or IP Address of your Android from the step 2.\n\n");
+  printf("****** WIFI Module in TCP Client mode demonstration ****** \n\n");
+  printf("TCP Client Instructions :\n");
+  printf("1- Make sure your Phone is connected to the same network that\n");
+  printf("   you configured using the Configuration Access Point.\n");
+  printf("2- Create a server by using the android application TCP Server\n");
+  printf("   with port(8002).\n");
+  printf("3- Get the Network Name or IP Address of your Android from the step 2.\n\n");
   
   /*Initialize  WIFI module */
   err = WIFI_Init();
   
   if(err !=  WIFI_STATUS_OK)
   {
-    LOG("> ERROR : WIFI Module cannot be initialized.\n");
+    printf("> ERROR : WIFI Module cannot be initialized.\n");
     BSP_LED_On(LED2);
     return -1;
   }
   
-  LOG("> WIFI Module Initialized.\n");
+  printf("> WIFI Module Initialized.\n");
   
   err = WIFI_GetMAC_Address(MAC_Addr);
   
   if(err != WIFI_STATUS_OK)
   {
-    LOG("> ERROR : CANNOT get MAC address\n");
+    printf("> ERROR : CANNOT get MAC address\n");
     BSP_LED_On(LED2);
   }
   
-  LOG("> Wi-Fi module MAC Address : %X:%X:%X:%X:%X:%X\n", MAC_Addr[0], MAC_Addr[1], MAC_Addr[2], MAC_Addr[3], MAC_Addr[4], MAC_Addr[5]);
+  printf("> Wi-Fi module MAC Address : %X:%X:%X:%X:%X:%X\n", MAC_Addr[0], MAC_Addr[1], MAC_Addr[2], MAC_Addr[3], MAC_Addr[4], MAC_Addr[5]);
   
   err = WIFI_Connect(SSID, PASSWORD, WIFI_ECN_WPA2_PSK);
   
   if( err != WIFI_STATUS_OK)
   {
-    LOG("> ERROR : Wi-Fi module NOT connected\n");
+    printf("> ERROR : Wi-Fi module NOT connected\n");
     BSP_LED_On(LED2);
     return -1;
   }
   
-  LOG("> Wi-Fi module connected \n");
+  printf("> Wi-Fi module connected \n");
   
   err = WIFI_GetIP_Address(IP_Addr);
   
   if(err != WIFI_STATUS_OK)
   {
-    LOG("> ERROR : Wi-Fi module CANNOT get IP address\n");
+    printf("> ERROR : Wi-Fi module CANNOT get IP address\n");
     BSP_LED_On(LED2);
     return -1;
   }
   
-  LOG("> Wi-Fi module got IP Address : %d.%d.%d.%d\n", IP_Addr[0], IP_Addr[1], IP_Addr[2], IP_Addr[3]);
-  LOG("> Trying to connect to Server   : %d.%d.%d.%d:%d\n", RemoteIP[0], RemoteIP[1], RemoteIP[2], RemoteIP[3], PORT);
+  printf("> Wi-Fi module got IP Address : %d.%d.%d.%d\n", IP_Addr[0], IP_Addr[1], IP_Addr[2], IP_Addr[3]);
+  printf("> Trying to connect to Server   : %d.%d.%d.%d:%d\n", RemoteIP[0], RemoteIP[1], RemoteIP[2], RemoteIP[3], PORT);
   
   while (Trials--)
   {
@@ -89,7 +106,7 @@ int App_Init(void)
     
     if(err == WIFI_STATUS_OK)
     {
-      LOG("> TCP Connection opened successfully.\n");
+      printf("> TCP Connection opened successfully.\n");
       Socket = 0;
       break;
     }
@@ -97,7 +114,7 @@ int App_Init(void)
   
   if(Socket == -1)
   {
-    LOG("> ERROR : Cannot open Connection\n");
+    printf("> ERROR : Cannot open Connection\n");
     BSP_LED_On(LED2);
     return -1;
   }
@@ -108,7 +125,7 @@ int App_Init(void)
   
   if (err != WIFI_STATUS_OK)
   {
-    LOG("> ERROR : Failed to Send Data, connection closed\n");
+    printf("> ERROR : Failed to Send Data, connection closed\n");
     return -1;
   }
   
@@ -134,13 +151,13 @@ int App_Run(void)
       {
         RxData[Datalen] = 0;
         
-        LOG("Received: %s\n",RxData);
+        printf("Received: %s\n",RxData);
         
         n = string_parser( (const char *)RxData, &word_array );
         
         for(int i = 0; i<n; i++)
         {
-          LOG("%s\r\n", word_array[i]);
+          printf("%s\r\n", word_array[i]);
         }
         
 //        sprintf((char *)TxData,"%s", "STM32 : Hello!\n");
@@ -159,14 +176,14 @@ int App_Run(void)
         
         if (err != WIFI_STATUS_OK)
         {
-          LOG("> ERROR : Failed to Send Data, connection closed\n");
+          printf("> ERROR : Failed to Send Data, connection closed\n");
           return -1;
         }
       }
     }
     else
     {
-      LOG("> ERROR : Failed to Receive Data, connection closed\n");
+      printf("> ERROR : Failed to Receive Data, connection closed\n");
       return -1;
     }
 
@@ -184,7 +201,7 @@ int App_Run(void)
         
         if (err != WIFI_STATUS_OK)
         {
-          LOG("> ERROR : Failed to Send Data, connection closed\n");
+          printf("> ERROR : Failed to Send Data, connection closed\n");
           return -1;
         }
       }

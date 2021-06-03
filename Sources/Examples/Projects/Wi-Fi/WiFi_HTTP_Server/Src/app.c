@@ -180,7 +180,7 @@ static bool WebServerProcess(void)
   if (WIFI_STATUS_OK == WIFI_ReceiveData(SOCKET, resp, 1000, &respLen, WIFI_READ_TIMEOUT))
   {
     LOG("get %d byte from server\n",respLen);
-      
+
     if( respLen > 0)
     {
       if(strstr((char *)resp, "POST"))/* POST: received info */

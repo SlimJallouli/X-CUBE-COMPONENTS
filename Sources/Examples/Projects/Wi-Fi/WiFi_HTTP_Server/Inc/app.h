@@ -6,7 +6,7 @@
 #include "wifi.h"
 
 #define SSID     "JSEC_2.4"
-#define PASSWORD "SlimEmn@!"
+#define PASSWORD "$limEmn@"
 
 #define WIFI_WRITE_TIMEOUT 10000
 #define WIFI_READ_TIMEOUT  10000
